@@ -16,4 +16,18 @@ class Comments extends Model
         'comment',
     ];
 
+    public function post()
+    {
+        # code...
+        return $this->belongsTo(Posts::class);
+
+    }
+
+    public function user()
+    {
+        # code...
+        return $this->belongsTo(User::class);
+
+    }
+
 }
