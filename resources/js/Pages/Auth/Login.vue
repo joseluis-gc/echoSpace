@@ -1,9 +1,9 @@
 <template>
     <Head title="Log in" />
 
-    <jet-authentication-card>
+    <authentication-card>
         <template #logo>
-            <jet-authentication-card-logo />
+            <authentication-card-logo />
         </template>
 
         <jet-validation-errors class="mb-4" />
@@ -40,12 +40,36 @@
                 </jet-button>
             </div>
         </form>
-    </jet-authentication-card>
+
+
+         <template #register>
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                <div class="flex justify-center">
+                    <span>Don't have an account?</span>&nbsp;&nbsp;
+                    <Link :href="route('register')"  class="underline text-sm text-gray-600 hover:text-gray-900">
+                        Register
+                    </Link>
+                </div>
+            </div>
+        </template>
+
+
+
+    </authentication-card>
+
+
+
+
+
+
+
+
+
 </template>
 
 <script>
-    import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue'
-    import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue'
+    import AuthenticationCard from '@/Components/AuthenticationCard.vue'
+    import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue'
     import JetButton from '@/Jetstream/Button.vue'
     import JetInput from '@/Jetstream/Input.vue'
     import JetCheckbox from '@/Jetstream/Checkbox.vue'
@@ -56,8 +80,8 @@
     export default {
         components: {
             Head,
-            JetAuthenticationCard,
-            JetAuthenticationCardLogo,
+            AuthenticationCard,
+            AuthenticationCardLogo,
             JetButton,
             JetInput,
             JetCheckbox,

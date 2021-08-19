@@ -15,8 +15,8 @@ class AddNewAttributesUsersTable extends Migration
     {
 
         Schema::table('users', function (Blueprint $table) {
-            $table->string('web_site');
-            $table->text('presentation');
+            $table->string('web_site')->nullable();
+            $table->text('presentation')->nullable();
             $table->boolean('status')->default(0);
             $table->string('nick_name');
         });
